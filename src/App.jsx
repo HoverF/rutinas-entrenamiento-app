@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import routinesData from './data/routines';
 import Card from './components/card';
 import RoutineCard from './components/RoutineCard';
@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <h1 className="text-center mt-3">Rutinas de ejercicio</h1>
+      <h1 className="text-center mt-3">Workout Routines</h1>
       <SearchForm onSearch={handleSearch} />
       {selectedRoutine ? (
         <div>
@@ -63,7 +63,7 @@ const App = () => {
         </div>
       ) : (
         <div>
-          <h2>Buscar resultados</h2>
+          <h2>Search Results</h2>
           <div className="row">
             {searchResults.map((routine) => (
               <div className="col-md-4 mb-4" key={routine.id}>
@@ -73,7 +73,7 @@ const App = () => {
           </div>
         </div>
       )}
-      <h2>Rutinas Favoritas</h2>
+      <h2>Favorite Routines</h2>
       <div className="row">
         {favoriteRoutines.map((routine) => (
           <div className="col-md-4 mb-4" key={routine.id}>
@@ -81,7 +81,7 @@ const App = () => {
           </div>
         ))}
       </div>
-      <h2>Resultado entrenamiento</h2>
+      <h2>Training Results</h2>
       <div>
         {trainingResults.map((result, index) => (
           <div className="mb-3" key={index}>
